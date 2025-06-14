@@ -209,7 +209,7 @@
     object-fit: contain;
     object-position: center;
     width: 481px;
-    box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.4);
+    /*box-shadow: 2px 8px 4px rgba(0, 0, 0, 0.4);*/
     align-self: stretch;
     min-width: 240px;
     margin-top: auto;
@@ -654,14 +654,14 @@
     cursor: pointer;
 }
 
-.dot {
+.dot-news {
     border-radius: 30px;
     width: 10px;
     height: 10px;
     background-color: #d6d6d6;
 }
 
-.dot.active {
+.dot-news.active {
     background-color: #945816;
 }
 
