@@ -6,6 +6,10 @@ body {
     height: 100%;
 }
 
+.no-select {
+    user-select: none;
+}
+
 
 /*Header*/
 
@@ -18,6 +22,12 @@ body {
     position: relative;
     overflow: hidden;
     background-color: #404040;
+    background-image: url('img/Watermark logo.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    /* or try: center center / left top etc. */
+    background-size: contain;
+    /* or 'cover' or a specific size like '500px auto' */
 }
 
 .home-watermark {
@@ -63,8 +73,10 @@ body {
 
 .home-catalog-button {
     display: flex;
+    width: 196px;
     height: 40px;
-    padding: 10px 30px;
+    /*padding: 10px 30px;*/
+    justify-content: center;
     align-items: center;
     gap: 5px;
     border-radius: 4px;
@@ -80,9 +92,9 @@ body {
 
 .home-nav-links {
     width: 100%;
-    border-bottom: 1px solid #565656;
+    border-top: 1px solid #565656;
     padding: 12px 0;
-    margin-top: 20px;
+    margin-top: 10px;
 }
 
 .home-nav-menu {
@@ -323,6 +335,12 @@ body {
     position: relative;
     /*min-height: 100vh;*/
     background-color: #404040;
+    background-image: url('img/WatermarkSubHeader.svg');
+    background-repeat: no-repeat;
+    background-position: right center;
+    /* or try: center center / left top etc. */
+    background-size: contain;
+    /* or 'cover' or a specific size like '500px auto' */
 }
 
 .watermark {
@@ -344,7 +362,7 @@ body {
 .main-header {
     display: flex;
     height: 152px;
-    max-width: 1440px;
+    /*max-width: 1440px;*/
     padding: 0 40px;
     align-items: center;
     gap: 30px;
@@ -380,13 +398,18 @@ body {
 
 .catalog-button {
     display: flex;
+    width: 196px;
     height: 40px;
-    padding: 10px 30px;
+    /*padding: 10px 30px;*/
+    justify-content: center;
     align-items: center;
     gap: 5px;
     border-radius: 4px;
     background-color: #945816;
     cursor: pointer;
+    color: #fff;
+    font-size: 14px;
+    font-weight: 600;
 }
 
 .catalog-icon::before {
@@ -552,7 +575,7 @@ body {
     display: flex;
     height: 56px;
     padding: 0px 40px;
-    justify-content: center;
+    /*justify-content: center;*/
     align-items: center;
     gap: 8px;
     align-self: stretch;
@@ -647,6 +670,12 @@ body {
     overflow: hidden;
     background-color: #945816;
     position: relative;
+    background-image: url('img/Watermark logo_mini.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    /* or try: center center / left top etc. */
+    background-size: contain;
+    /* or 'cover' or a specific size like '500px auto' */
 }
 
 .watermark-container {

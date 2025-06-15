@@ -128,7 +128,7 @@
     }
 }
 
-.cngty-c-phn-cng-ngh-thit-b-phng-namlnvnhpkhuphnphisnxutvlprpccthitb-pcc-cphcvchoccdnhngucthnhlpvonm-2007-pnte-clintcphttrintronglnhvcphngchychachyviphngchmmanglishilngchokhchhng-chngtiluniutrongvicngdngvcitincngnghaccsnphmmivothtrng-pccc-dockhchhngnggicaotrongcchtlngvgic {
+.intro-content {
     color: var(--Text-Body-text, #5e5e5e);
     font-size: 16px;
     font-weight: 400;
@@ -137,7 +137,7 @@
 }
 
 @media (max-width: 991px) {
-    .cngty-c-phn-cng-ngh-thit-b-phng-namlnvnhpkhuphnphisnxutvlprpccthitb-pcc-cphcvchoccdnhngucthnhlpvonm-2007-pnte-clintcphttrintronglnhvcphngchychachyviphngchmmanglishilngchokhchhng-chngtiluniutrongvicngdngvcitincngnghaccsnphmmivothtrng-pccc-dockhchhngnggicaotrongcchtlngvgic {
+    .intro-content {
         max-width: 100%;
     }
 }
@@ -335,6 +335,12 @@
     overflow: hidden;
     align-items: center;
     justify-content: center;
+    background-image: url('img/Watermark logo_mini.svg');
+    background-repeat: no-repeat;
+    background-position: left center;
+    /* or try: center center / left top etc. */
+    background-size: contain;
+    /* or 'cover' or a specific size like '500px auto' */
 }
 
 .partners-container {

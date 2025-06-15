@@ -5,10 +5,12 @@
     <title>PNTEC</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" />
     <link rel="stylesheet" href="style_news.css" />
+    <link rel="icon" href="img/pntec_icon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
-    <main class="hero">
+    <main class="hero no-select">
         <!--<div class="watermark">
         <svg width="980" height="336" viewBox="0 0 980 336" fill="none" xmlns="http://www.w3.org/2000/svg" class="watermark-logo">
       <g filter="url(#filter0_d_2101_16214)">
@@ -31,13 +33,13 @@
 
         <header class="main-header">
             <div class="logo-container">
-                <a style="cursor: pointer; user-select: none;" href="homepage.html"><img src="img/Logo.svg" alt="SVG Image" id="svg-image"></a>
+                <a class="no-select" style="cursor: pointer;" href="homepage.html"><img src="img/Logo.svg" alt="SVG Image" id="svg-image"></a>
             </div>
 
             <nav class="main-nav">
                 <div class="nav-top">
                     <div class="catalog-button">
-                        <i class="catalog-icon"></i>
+                        <i class="fas fa-bars"></i>
                         <span class="catalog-text">Product Catalog</span>
                     </div>
                 </div>
@@ -60,8 +62,7 @@
                             <a href="certificates.html" class="nav-link">CERTIFICATES</a>
                         </li>
                         <li class="nav-item has-dropdown">
-                            <a href="#" class="nav-link">PRODUCTS</a>
-                            <i class="dropdown-icon"></i>
+                            <a href="#" class="nav-link">PRODUCTS <i class="fas fa-chevron-down"></i></a>
                         </li>
                         <li class="nav-item">
                             <a href="news.html" class="nav-link">NEWS</a>
@@ -84,7 +85,7 @@
         <div class="hero-fade"></div>
     </main>
     <!-- Breadcrumb Navigation -->
-    <nav class="breadcrumb-navigation">
+    <nav class="breadcrumb-navigation no-select">
         <div class="breadcrumb-container">
             <a href="homepage.html" class="breadcrumb-item">Home</a>
             <span class="breadcrumb-separator">-</span>
@@ -92,7 +93,7 @@
         </div>
     </nav>
     <!-- News Content -->
-    <section class="blog-intro-section">
+    <section class="blog-intro-section no-select">
         <div class="top-divider"></div>
 
         <div class="main-container">
@@ -311,27 +312,7 @@
     </section>
 
     <!--Contact-->
-    <section class="contact">
-        <div class="watermark-container">
-            <svg class="watermark-logo" width="668" height="493" viewBox="0 0 668 493" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g filter="url(#filter0_d_2115_382)">
-        <path d="M167.822 634.123C160.152 640.5 149.979 642.825 140.365 640.388C124.98 636.413 120.531 627.751 99.2435 586.114C92.8657 573.684 79.5207 547.138 77.5655 542.106C49.7553 471.395 41.5867 398.261 53.9867 330.495C62.0262 286.496 77.7612 245.233 99.8539 208.268C101.104 206.136 98.2423 196.213 97.9262 193.522C97.2516 187.576 96.7184 181.596 96.3268 175.581C95.4887 163.127 95.1665 150.578 95.3939 138.078C96.3379 86.118 106.391 41.2693 127.316 -5.46874C151.523 -59.5787 185.375 -110.034 229.519 -149.535C259.281 -176.152 293.645 -197.409 330.955 -211.259C354.575 -220.058 380.82 -209.471 392.003 -186.666C404.21 -161.855 440.811 -96.1142 517.028 -21.7349C584.792 44.3761 648.358 126.141 606.179 231.688C593.622 263.094 572.313 292.232 544.607 315.947L412.475 428.966C400.894 438.875 384.111 440.803 371.363 432.575C358.265 424.131 352.606 408.261 357.296 393.305C357.735 391.989 358.071 390.804 358.364 389.568C363.828 368.467 362.662 342.483 354.81 312.264C340.558 257.326 310.132 199.512 275.472 161.412C271.9 157.453 268.319 153.586 264.734 149.765C261.236 145.999 257.697 142.183 254.162 138.32C218.728 159.67 188.29 188.189 164.64 221.886C191.993 350.019 284.26 419.276 319 441.312C333.86 450.706 341.267 469.767 334.871 487.843C332.409 494.82 327.814 500.861 322.14 505.545L167.822 634.123ZM125.077 300.428C120.668 313.773 117.097 327.566 114.512 341.681C104.242 397.862 111.245 459.121 134.761 518.894C136.606 523.075 147.192 544.285 156.684 562.736L260.598 476.097C223.005 447.175 161.509 389.513 125.077 300.428ZM313.382 110.989C315.825 113.634 318.31 116.329 320.794 119.025C362.478 164.846 397.469 231.052 414.371 296.221C418.23 311.045 420.84 325.384 422.217 339.054L504.931 268.294C525.051 251.057 540.354 230.358 549.128 208.335C561.449 177.515 563.767 146.045 540.957 104.928C459.574 86.9478 381.841 88.7713 315.287 110.316C314.618 110.584 313.998 110.809 313.382 110.989ZM157.039 135.02L157.035 135.581C174.865 118.142 194.475 102.495 215.691 89.0452C213.751 85.9306 211.865 82.7274 210.029 79.4818C199.033 59.7768 191.482 36.592 187.454 11.6627C187.168 12.2915 186.832 12.9626 186.546 13.5913C168.696 51.6313 158.309 92.9466 157.039 135.02ZM327.564 -142.043C263.673 -109.892 231.026 -34.9438 256.222 32.4529C258.386 38.2502 260.904 43.7049 263.729 48.8131C265.958 52.8408 268.34 56.6952 270.863 60.5154C279.291 57.0552 287.877 53.8893 296.663 51.0681C353.761 32.6124 417.266 26.7759 484.048 32.9549C480.913 29.7815 477.65 26.5033 474.249 23.213C401.308 -48.0271 361.313 -111.919 341.951 -148.714C337.059 -146.624 332.247 -144.386 327.564 -142.043Z" fill="white" fill-opacity="0.03" shape-rendering="crispEdges"/>
-      </g>
-      <defs>
-        <filter id="filter0_d_2115_382" x="0.354492" y="-262.344" width="667.393" height="951.68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-          <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-          <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-          <feOffset/>
-          <feGaussianBlur stdDeviation="24"/>
-          <feComposite in2="hardAlpha" operator="out"/>
-          <feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.2 0"/>
-          <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_2115_382"/>
-          <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_2115_382" result="shape"/>
-        </filter>
-      </defs>
-    </svg>
-        </div>
-
+    <section class="contact no-select">
         <div class="content-wrapper">
             <header class="info-section">
                 <div class="info-content">
@@ -370,18 +351,21 @@
 
     <!--Social Contact-->
     <footer class="social-contact">
-        <div class="social-contact-container">
-            <div class="logo-wrapper"></div>
+        <div class="social-contact-container no-select">
+            <div class="logo-wrapper"><img src="img/Logo.svg"></div>
             <div class="social-content">
                 <h2 class="follow-text">Follow us on</h2>
-                <img src="https://cdn.builder.io/api/v1/image/assets/TEMP/e5177921991e3841e1b9f2aff7d57b2dd3b57964?placeholderIfAbsent=true&apiKey=24f9b8ebdcd7488e8872bc57ef8a8ac0" alt="Social media icons" class="social-icons" />
+                <a href="#"><img src="img/fb_icon.png" alt="Social media icons" /></a>
+                <a href="#"><img src="img/youtube_icon.png" alt="Social media icons" /></a>
+                <a href="#"><img src="img/linkin_icon.png" alt="Social media icons" /></a>
+                <a href="#"><img src="img/zalo_icon.png" alt="Social media icons" /></a>
             </div>
         </div>
     </footer>
     <!--Footer-->
     <footer class="footer">
         <div class="content">
-            <section class="company-info">
+            <section class="company-info no-select">
                 <h1 class="company-name">Công ty Cổ phần Công nghệ Thiết bị Phương Nam</h1>
                 <p class="company-description">
                     Chúng tôi tự hào là đơn vị tiên phong trong lĩnh vực phòng cháy chữa cháy, với những công nghệ mới nhất đảm bảo an toàn cho mọi công trình
@@ -389,50 +373,42 @@
             </section>
 
             <div class="footer-navigation">
-                <nav class="footer-nav">
+                <nav class="footer-nav no-select">
                     <h2 class="nav-heading">NAVIGATION</h2>
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-link">HOME</a></li>
-                        <li><a href="#" class="nav-link">ABOUT US</a></li>
-                        <li><a href="#" class="nav-link">CERTIFICATES</a></li>
-                        <li><a href="#" class="nav-link">NEWS</a></li>
+                        <li><a href="homepage.html" class="footer-nav-link">HOME</a></li>
+                        <li><a href="about.html" class="footer-nav-link">ABOUT US</a></li>
+                        <li><a href="certificates.html" class="footer-nav-link">CERTIFICATES</a></li>
+                        <li><a href="news.html" class="footer-nav-link">NEWS</a></li>
                     </ul>
                 </nav>
 
-                <nav class="footer-nav">
+                <nav class="footer-nav no-select">
                     <h2 class="nav-heading">PRODUCT</h2>
                     <ul class="nav-list">
-                        <li><a href="#" class="nav-link">PNFC (HFC-227ea/FM200)</a></li>
-                        <li><a href="#" class="nav-link">PNFK (HK-5-1-12/NOVEC1230)</a></li>
-                        <li><a href="#" class="nav-link">PN-N2 (IG-100/N2)</a></li>
-                        <li><a href="#" class="nav-link">PNCO (CO2)</a></li>
-                        <li><a href="#" class="nav-link">PNSO (Aerosol)</a></li>
-                        <li><a href="#" class="nav-link">PNF125 (HFC-125)</a></li>
+                        <li><a href="#" class="footer-nav-link">PNFC (HFC-227ea/FM200)</a></li>
+                        <li><a href="#" class="footer-nav-link">PNFK (HK-5-1-12/NOVEC1230)</a></li>
+                        <li><a href="#" class="footer-nav-link">PN-N2 (IG-100/N2)</a></li>
+                        <li><a href="#" class="footer-nav-link">PNCO (CO2)</a></li>
+                        <li><a href="#" class="footer-nav-link">PNSO (Aerosol)</a></li>
+                        <li><a href="#" class="footer-nav-link">PNF125 (HFC-125)</a></li>
                     </ul>
                 </nav>
 
                 <nav class="footer-nav">
                     <h2 class="nav-heading">CONTACT</h2>
                     <ul class="nav-list">
-                        <li><a href="tel:0988668114" class="nav-link">Tel: 0988 668 114</a></li>
-                        <li><a href="mailto:sup@evhospitality.vn" class="nav-link">E-mail: sup@evhospitality.vn</a></li>
-                        <li><address class="nav-link">Địa chỉ văn phòng: Tòa nhà ADI Tây Hà Nội, Lô HH03, Phường Tố Hữu, Vạn Phúc, Hà Đông, Hà Nội</address></li>
+                        <li><a href="tel:0988668114" class="footer-nav-link">Tel: 0988 668 114</a></li>
+                        <li><a href="mailto:sup@evhospitality.vn" class="footer-nav-link">E-mail: sup@evhospitality.vn</a></li>
+                        <li><address class="footer-nav-link">Địa chỉ văn phòng: Tòa nhà ADI Tây Hà Nội, Lô HH03, Phường Tố Hữu, Vạn Phúc, Hà Đông, Hà Nội</address></li>
                     </ul>
                 </nav>
             </div>
         </div>
 
-        <div class="footer-bottom">
+        <div class="footer-bottom no-select">
             <div class="logo-footer">
-                <svg width="36" height="57" viewBox="0 0 36 57" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M9.12564 55.6231C8.9018 55.8423 8.62987 56.0062 8.33157 56.1019C8.03326 56.1976 7.71666 56.2223 7.40711 56.1743C6.39375 56.0053 6.06195 55.4809 4.45894 52.9624C3.97897 52.2068 2.97747 50.592 2.81745 50.2957C0.621958 45.9638 -0.317361 41.3831 0.0944925 37.0009C0.355519 34.22 1.1185 31.5095 2.34633 29.0008C2.41453 28.8586 2.17455 28.2453 2.13899 28.0764C2.06194 27.6991 1.99374 27.3228 1.93448 26.9475C1.81011 26.1573 1.71923 25.3672 1.66194 24.5771C1.40839 21.4272 1.8296 18.2595 2.8975 15.2853C4.14492 11.7297 6.03231 8.32818 8.64267 5.57557C10.4028 3.70826 12.4959 2.1859 14.8145 1.08667C15.5222 0.758105 16.326 0.701234 17.0729 0.926882C17.8197 1.15253 18.4576 1.64494 18.865 2.31037C19.7894 3.81557 22.5183 7.78002 27.8279 12.0675C32.5509 15.8808 37.099 20.7134 34.9894 27.6409C34.3077 29.7908 33.114 31.7431 31.5109 33.3298L23.6679 41.2379C23.336 41.5856 22.9015 41.8178 22.428 41.9004C21.9544 41.9831 21.4669 41.9119 21.0368 41.6971C20.6075 41.4778 20.2636 41.1215 20.0596 40.6846C19.8557 40.2477 19.8033 39.7553 19.9109 39.2853C19.9316 39.1994 19.9464 39.1223 19.9583 39.0424C20.1923 37.6734 19.9583 36.0319 19.2916 34.1594C18.0738 30.7549 15.7953 27.2586 13.3538 25.0364C13.1019 24.8053 12.8501 24.5801 12.5983 24.3579C12.3464 24.1356 12.1034 23.9164 11.8516 23.6882C9.70868 25.2348 7.91233 27.2118 6.57747 29.4927C9.06045 37.4661 15.3775 41.3446 17.7331 42.5298C18.2414 42.7889 18.6457 43.2141 18.8791 43.7348C19.1124 44.2554 19.1608 44.8401 19.0161 45.392C18.8882 45.8445 18.6405 46.254 18.299 46.5772L9.12564 55.6231ZM4.48857 34.6986C4.27882 35.5761 4.13032 36.4672 4.04417 37.3653C3.70635 40.986 4.50042 44.832 6.34934 48.4913C6.4945 48.7461 7.29158 50.032 8.0056 51.1579L14.1864 45.0809C11.6086 43.4572 7.33307 40.1446 4.48857 34.6986ZM15.5049 21.6289C15.6768 21.786 15.8516 21.9252 16.0235 22.1C18.9598 24.7667 21.582 28.7757 23.0368 32.8142C23.3547 33.6823 23.6044 34.5739 23.7835 35.4809L28.6931 30.5298C29.8417 29.4019 30.6989 28.0119 31.1909 26.4793C31.8072 24.4556 31.7835 22.4467 30.0828 19.9608C24.7494 19.2763 19.7716 19.8275 15.6235 21.5667L15.5049 21.6289ZM5.60268 24.029V24.0645C6.65228 22.8519 7.82609 21.7525 9.10494 20.7845C8.96562 20.5979 8.82639 20.4082 8.69008 20.2097C7.84052 18.9354 7.21977 17.5226 6.85602 16.0348L6.80861 16.1623C5.86749 18.673 5.45692 21.3516 5.60268 24.029ZM14.9805 5.5015C11.0604 7.90151 9.38641 12.8348 11.3893 16.9682C11.5538 17.3182 11.745 17.655 11.9612 17.9756C12.1271 18.2186 12.3019 18.4497 12.4857 18.6749C13.0071 18.4082 13.5434 18.1593 14.0886 17.9312C17.6442 16.4497 21.6946 15.7149 26.0205 15.7327L25.3361 15.1696C20.2486 11.063 17.3183 7.23484 15.8545 5.00964C15.5642 5.15779 15.2679 5.32668 14.9805 5.5015Z" fill="url(#paint0_linear_2115_1538)"/>
-        <defs>
-          <linearGradient id="paint0_linear_2115_1538" x1="10.9716" y1="61.0276" x2="22.8797" y2="1.24371" gradientUnits="userSpaceOnUse">
-            <stop stop-color="white"/>
-            <stop offset="1" stop-color="white" stop-opacity="0.5"/>
-          </linearGradient>
-        </defs>
-      </svg>
+                <img src="img/Logo footer.svg" alt="PNTEC Logo">
             </div>
             <p class="copyright">Copyright ©2025 All Rights Reserved | PNTEC</p>
         </div>
