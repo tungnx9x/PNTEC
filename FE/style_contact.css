@@ -53,9 +53,10 @@
 
 @media (max-width: 991px) {
     .contact-container {
-        flex-direction: column;
+        flex-direction: unset;
         gap: 40px;
         padding: 0 24px;
+        margin-left: 0;
     }
 }
 
