@@ -15,9 +15,9 @@
 }
 
 @media (max-width: 991px) {
-    .intro {
+    /*.intro {
         padding: 0 20px;
-    }
+    }*/
 }
 
 .div-intro {
@@ -37,6 +37,7 @@
 @media (max-width: 991px) {
     .div-intro {
         max-width: 100%;
+        flex-wrap: unset;
     }
 }
 
@@ -304,6 +305,7 @@
     }
     .showcase__container {
         max-width: 100%;
+        flex-wrap: unset;
     }
     .showcase__image {
         max-width: 100%;
@@ -466,6 +468,7 @@
     }
     .partners-grid {
         max-width: 100%;
+        margin: 0 auto;
     }
     .partner-logo-wrapper:nth-child(2) {
         padding: 64px 20px;
@@ -494,6 +497,7 @@
 @media (max-width: 991px) {
     .blog-content {
         max-width: 100%;
+        align-items: center;
     }
 }
 

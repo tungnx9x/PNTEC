@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 html,
 body {
     margin: 0;
@@ -88,6 +89,18 @@ body {
     font-size: 14px;
     font-weight: 600;
     align-self: flex-end;
+}
+
+
+/* Mobile menu toggle button */
+
+.home-toggle-menu-button {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
 }
 
 .home-nav-links {
@@ -237,6 +250,11 @@ body {
     opacity: 0;
 }
 
+.home-nav-top-row {
+    display: flex;
+    flex-direction: column;
+}
+
 @media (max-width: 991px) {
     .home-hero-section {
         height: auto;
@@ -246,19 +264,21 @@ body {
     .home-main-header {
         padding: 20px;
         height: auto;
-        flex-direction: column;
+        flex-direction: row;
+        flex-wrap: wrap;
         gap: 20px;
         width: 100%;
+        max-width: 90%;
     }
     .home-hero-content {
         width: 100%;
-        padding: 20px;
+        /*padding: 20px;*/
         height: auto;
         flex-direction: column;
         gap: 30px;
     }
     .home-hero-main {
-        flex-direction: column;
+        /*flex-direction: column;*/
         height: auto;
         gap: 40px;
         text-align: center;
@@ -282,18 +302,47 @@ body {
         width: 100%;
         height: auto;
     }
-    .home-slider-dots {
-        position: relative;
-        left: auto;
-        bottom: auto;
-        margin-top: 20px;
-    }
     .home-slider-prev {
         display: none;
     }
     .home-slider-next {
         display: none;
     }
+    .home-hero-fade {
+        display: none;
+    }
+    /*Toggle Header Menu*/
+    /*.home-nav-top-row {
+        display: flex;
+        flex-direction: row;
+        justify-content: end;
+        align-items: center;
+        width: 100%;
+    }
+    .home-toggle-menu-button {
+        display: block;
+    }
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #404040;
+        border-top: 1px solid #565656;
+        padding: 10px 0;
+    }
+    #mobile-menu.show {
+        display: flex;
+    }
+    .home-nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .home-nav-item {
+        padding: 0 15px;
+    }
+    .home-hero-fade {
+        display: none;
+    }*/
 }
 
 @media (max-width: 640px) {
@@ -320,6 +369,28 @@ body {
     }
     .home-slider-next {
         display: none;
+    }
+    /*Toggle Header Menu*/
+    .home-toggle-menu-button {
+        display: block;
+    }
+    #mobile-menu {
+        display: none;
+        flex-direction: column;
+        background-color: #404040;
+        border-top: 1px solid #565656;
+        padding: 10px 0;
+    }
+    #mobile-menu.show {
+        display: flex;
+    }
+    .home-nav-menu {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    .home-nav-item {
+        padding: 0 15px;
     }
 }
 
@@ -660,7 +731,9 @@ body {
 
 /*Contact*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap');*/
+
 .contact {
     display: flex;
     /*padding: 40px;*/
@@ -854,6 +927,11 @@ body {
     .content-wrapper {
         flex-direction: column;
         gap: 40px;
+        margin: 0;
+        align-items: normal;
+    }
+    .info-section {
+        padding: 0;
     }
 }
 
@@ -879,7 +957,9 @@ body {
 
 /*Social Contact*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');*/
+
 .social-contact {
     align-items: center;
     align-self: stretch;
@@ -955,7 +1035,9 @@ body {
 
 /*Footer*/
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+/*@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');*/
+
 .footer {
     display: flex;
     padding: 80px 40px 40px;
@@ -1090,8 +1172,9 @@ body {
         max-width: 100%;
     }
     .footer-navigation {
-        flex-direction: column;
+        flex-direction: unset;
         gap: 32px;
+        padding-left: 0;
     }
     .footer-nav {
         max-width: 100%;

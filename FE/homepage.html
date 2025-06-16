@@ -9,7 +9,7 @@
 </head>
 
 <body>
-    <main class="home-hero-section">
+    <main class="home-hero-section no-select">
         <!--<div class="home-watermark">
             <img src="img/Watermark logo.svg" alt="PNTEC Watermark">
         </div>-->
@@ -20,12 +20,17 @@
             </div>
 
             <nav class="home-main-nav">
+                <!--<div class="home-nav-top-row">-->
                 <div class="home-catalog-button">
-                    <i class="fas fa-bars"></i>
+                    <i class="fa fa-book"></i>
                     <span>Product Catalog</span>
                 </div>
+                <!--<button class="home-toggle-menu-button" id="mobile-menu-toggle" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>-->
+                <!--</div>-->
 
-                <div class="home-nav-links">
+                <div class="home-nav-links" id="mobile-menu">
                     <ul class="home-nav-menu">
                         <li class="home-nav-item">
                             <a href="about.html" class="home-nav-link">ABOUT US</a>
@@ -365,126 +370,133 @@
             <p class="copyright">Copyright ©2025 All Rights Reserved | PNTEC</p>
         </div>
     </footer>
+    <script>
+        const slides = [{
+            subtitle: 'pntec FIRE security',
+            title: 'FM200 Extinguishing Systems',
+            image: 'img/coldbottle.png'
+        }, {
+            subtitle: 'Advanced FIRE Solutions',
+            title: 'CO2 Suppression Systems',
+            image: 'img/product_showcase.png'
+        }, {
+            subtitle: 'Reliable FIRE Control',
+            title: 'Water Mist Systems',
+            image: 'img/Logo.png'
+        }];
+
+        let currentSlide = 0;
+        let autoPlayInterval;
+
+        const subtitleEl = document.getElementById('hero-subtitle');
+        const titleEl = document.getElementById('hero-title');
+        const imageEl = document.getElementById('hero-image');
+        const dots = document.querySelectorAll('.home-dot');
+        const textContainer = document.querySelector('.home-hero-text');
+        const imageContainer = document.querySelector('.home-hero-image');
+
+        function updateActiveDot(index) {
+            dots.forEach(dot => dot.classList.remove('active'));
+            if (dots[index]) {
+                dots[index].classList.add('active');
+            }
+        }
+
+        function showSlide(index) {
+            // Add fade-out class
+            textContainer.classList.add('fade-out');
+            imageContainer.classList.add('fade-out');
+
+            setTimeout(() => {
+                const slide = slides[index];
+                subtitleEl.textContent = slide.subtitle;
+                titleEl.textContent = slide.title;
+                imageEl.src = slide.image;
+                imageEl.alt = slide.title;
+
+                updateActiveDot(index);
+
+                // Remove fade-out to fade in
+                textContainer.classList.remove('fade-out');
+                imageContainer.classList.remove('fade-out');
+            }, 300); // Half of transition time
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        document.querySelector('.home-slider-next').addEventListener('click', () => {
+            nextSlide();
+            resetAutoplay();
+        });
+
+        document.querySelector('.home-slider-prev').addEventListener('click', () => {
+            prevSlide();
+            resetAutoplay();
+        });
+
+        dots.forEach(dot => {
+            dot.addEventListener('click', (e) => {
+                const index = parseInt(e.target.getAttribute('data-slide'));
+                currentSlide = index;
+                showSlide(currentSlide);
+                resetAutoplay();
+            });
+        });
+
+        function startAutoplay() {
+            autoPlayInterval = setInterval(nextSlide, 5000); // every 5s
+        }
+
+        function resetAutoplay() {
+            clearInterval(autoPlayInterval);
+            startAutoplay();
+        }
+
+        // SWIPE SUPPORT (basic)
+        let startX = 0;
+
+        function handleTouchStart(e) {
+            startX = e.touches[0].clientX;
+        }
+
+        function handleTouchEnd(e) {
+            const endX = e.changedTouches[0].clientX;
+            const diff = startX - endX;
+
+            if (Math.abs(diff) > 50) {
+                if (diff > 0) {
+                    nextSlide();
+                } else {
+                    prevSlide();
+                }
+                resetAutoplay();
+            }
+        }
+
+        const swipeArea = document.querySelector('.home-hero-main');
+        swipeArea.addEventListener('touchstart', handleTouchStart);
+        swipeArea.addEventListener('touchend', handleTouchEnd);
+
+        // Init
+        showSlide(currentSlide);
+        startAutoplay();
+    </script>
+    <!--<script>
+        const toggleButton = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        toggleButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('show');
+        });
+    </script>-->
 </body>
 
 </html>
-
-<script>
-    const slides = [{
-        subtitle: 'pntec FIRE security',
-        title: 'FM200 Extinguishing Systems',
-        image: 'img/coldbottle.png'
-    }, {
-        subtitle: 'Advanced FIRE Solutions',
-        title: 'CO2 Suppression Systems',
-        image: 'img/product_showcase.png'
-    }, {
-        subtitle: 'Reliable FIRE Control',
-        title: 'Water Mist Systems',
-        image: 'img/Logo.png'
-    }];
-
-    let currentSlide = 0;
-    let autoPlayInterval;
-
-    const subtitleEl = document.getElementById('hero-subtitle');
-    const titleEl = document.getElementById('hero-title');
-    const imageEl = document.getElementById('hero-image');
-    const dots = document.querySelectorAll('.home-dot');
-    const textContainer = document.querySelector('.home-hero-text');
-    const imageContainer = document.querySelector('.home-hero-image');
-
-    function updateActiveDot(index) {
-        dots.forEach(dot => dot.classList.remove('active'));
-        if (dots[index]) {
-            dots[index].classList.add('active');
-        }
-    }
-
-    function showSlide(index) {
-        // Add fade-out class
-        textContainer.classList.add('fade-out');
-        imageContainer.classList.add('fade-out');
-
-        setTimeout(() => {
-            const slide = slides[index];
-            subtitleEl.textContent = slide.subtitle;
-            titleEl.textContent = slide.title;
-            imageEl.src = slide.image;
-            imageEl.alt = slide.title;
-
-            updateActiveDot(index);
-
-            // Remove fade-out to fade in
-            textContainer.classList.remove('fade-out');
-            imageContainer.classList.remove('fade-out');
-        }, 300); // Half of transition time
-    }
-
-    function nextSlide() {
-        currentSlide = (currentSlide + 1) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    function prevSlide() {
-        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-        showSlide(currentSlide);
-    }
-
-    document.querySelector('.home-slider-next').addEventListener('click', () => {
-        nextSlide();
-        resetAutoplay();
-    });
-
-    document.querySelector('.home-slider-prev').addEventListener('click', () => {
-        prevSlide();
-        resetAutoplay();
-    });
-
-    dots.forEach(dot => {
-        dot.addEventListener('click', (e) => {
-            const index = parseInt(e.target.getAttribute('data-slide'));
-            currentSlide = index;
-            showSlide(currentSlide);
-            resetAutoplay();
-        });
-    });
-
-    function startAutoplay() {
-        autoPlayInterval = setInterval(nextSlide, 5000); // every 5s
-    }
-
-    function resetAutoplay() {
-        clearInterval(autoPlayInterval);
-        startAutoplay();
-    }
-
-    // SWIPE SUPPORT (basic)
-    let startX = 0;
-
-    function handleTouchStart(e) {
-        startX = e.touches[0].clientX;
-    }
-
-    function handleTouchEnd(e) {
-        const endX = e.changedTouches[0].clientX;
-        const diff = startX - endX;
-
-        if (Math.abs(diff) > 50) {
-            if (diff > 0) {
-                nextSlide();
-            } else {
-                prevSlide();
-            }
-            resetAutoplay();
-        }
-    }
-
-    const swipeArea = document.querySelector('.home-hero-main');
-    swipeArea.addEventListener('touchstart', handleTouchStart);
-    swipeArea.addEventListener('touchend', handleTouchEnd);
-
-    // Init
-    showSlide(currentSlide);
-    startAutoplay();
-</script>
