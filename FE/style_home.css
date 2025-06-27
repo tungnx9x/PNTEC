@@ -296,6 +296,7 @@
     white-space: nowrap;
     line-height: 1;
     cursor: pointer;
+    text-decoration: none;
 }
 
 @media (max-width: 991px) {
